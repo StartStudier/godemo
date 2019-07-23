@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "godemo/channel"
 
 func main() {
-	fmt.Print("hello world!")
+	channel.Test1()
 }
