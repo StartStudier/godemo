@@ -87,3 +87,13 @@ func Test4() {
 		fmt.Printf("%s:%s %s\n", f.Name, f.Tag.Get("field"), f.Tag.Get("type"))
 	}
 }
+
+func Test5() {
+	a := 100
+
+	va, vp := reflect.ValueOf(a), reflect.ValueOf(&a).Elem()
+
+	fmt.Println(va.CanAddr(), va.CanSet())
+	fmt.Println(vp.CanAddr(), vp.CanSet())
+	fmt.Println(vp)
+}
