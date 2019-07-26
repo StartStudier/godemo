@@ -1,7 +1,9 @@
 package main
 
-import "godemo/channel"
+import (
+	"godemo/refl"
+)
 
 func main() {
-	channel.Test1()
+	refl.Test4()
 }
