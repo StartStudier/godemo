@@ -97,3 +97,39 @@ func Test5() {
 	fmt.Println(vp.CanAddr(), vp.CanSet())
 	fmt.Println(vp)
 }
+
+
+//使用这种方式做类型转换避免引发异常
+type User6 struct {
+	Name string
+	Age int
+}
+
+func Test6(){
+	v := User6{
+		"liwenpeng",
+		28,
+	}
+
+	p := reflect.ValueOf(&v)
+
+	if !p.CanInterface(){
+		println("interface fail!")
+		return
+	}
+
+	m,ok := p.Interface().(*User6)
+
+	if !ok{
+		println("change fail!")
+		return
+	}
+
+	m.Age++
+	fmt.Printf("%v",m)
+
+
+
+
+
+}

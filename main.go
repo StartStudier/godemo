@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	refl.Test5()
+	refl.Test6()
 }
