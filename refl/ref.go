@@ -3,6 +3,7 @@ package refl
 import (
 	"fmt"
 	"reflect"
+	"unsafe"
 )
 
 type X int
@@ -96,4 +97,19 @@ func Test5() {
 	fmt.Println(va.CanAddr(), va.CanSet())
 	fmt.Println(vp.CanAddr(), vp.CanSet())
 	fmt.Println(vp)
+}
+
+//验证类型转换
+func Test6() {
+	/*c := make(chan int,4)
+	v := reflect.ValueOf(c)
+
+	if v.TrySend(reflect.ValueOf(100)){
+		fmt.Println(v.TryRecv())
+	}*/
+
+	var b interface{} = (*int)(nil)
+	iface := (*[2]uintptr)(unsafe.Pointer(&b))
+
+	fmt.Println(iface, iface[1] == 0)
 }

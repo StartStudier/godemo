@@ -1,9 +1,7 @@
 package main
 
-import (
-	"godemo/refl"
-)
+import "godemo/web"
 
 func main() {
-	refl.Test5()
+	web.Test()
 }
